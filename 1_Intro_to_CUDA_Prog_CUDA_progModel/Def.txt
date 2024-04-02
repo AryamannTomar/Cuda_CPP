@@ -26,3 +26,6 @@ Within the same process multiple threads can co-exist and share the memory bw th
                                                Computing in GPU (GPGPU)
 
 => In a CUDA program it is very common to use threadIdx, blockIdx, blockDim, gridDim variable values to calculate array indices.
+
+7) BlockDim: variable consist of no. of threads in each dimension of a thread block. Notice all the thread block in a grid have same block size, so this variable
+             value is same for all the threads in a grid.

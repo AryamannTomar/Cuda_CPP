@@ -12,7 +12,26 @@ __global__ void unique_idx_calc_threadIdx(int *input){
     printf("threadIdx: %d, Value: %d \n", tid, input[tid]);
 }
 
+__global__ void unique_gid_calculation(int *input){
+    int tid=threadIdx.x;
+    int offset=blockIdx.x*blockDim.x;
+    int gid=tid+offset;
+    printf("blockIdx: %d, threadIdx: %d, gid, %d, Value: %d \n", blockIdx.x, tid, gid, input[tid]);
+}
+
 int main(){
+
+    /*
+      int array_size=16;
+      int array_byte_size=sizeof(int)*array_size;
+      int h_data[]={23,9,4,53,65,12,1,33,87,45,23,12,342,56,44,99};  
+
+      dim3 block(4);
+      dim3 grid(4);
+
+      unique_gid_calculation << <grid, block> >> (d_data);
+    */
+
     int array_size=8;
     int array_byte_size=sizeof(int)*array_size;
     int h_data[]={23,9,4,53,65,12,1,33};
@@ -30,5 +49,6 @@ int main(){
     unique_idx_calc_threadIdx << <grid,block> >>(d_data);
     cudaDeviceSynchronize(); 
     cudaDeviceReset();
+    
     return 0;
 }
