@@ -1,0 +1,26 @@
+1) Process: An instance of a computer program that is being executed
+
+2) Context: Collection of Data abt process which allows processor to suspend/ hold the exec of a process and restart the exec later
+    - Mem Address
+    - Program Counter States
+
+3) Thread: ToE is the smallest seq of programmed instructions that can be managed independently by a scheduler
+Thread is component of a process (scaled down version of a process). Every process have at least on thread called main thread which is the entry pt. of that program
+
+Within the same process multiple threads can co-exist and share the memory bw them (mem allocated for that particular process), However when we consider 2 process there will not be any sharing of resources bw them
+
+4) Difference bw CPU and GPU
+                    CPU                              |                       GPU
+- Latency Device w high lock speed                   | - ThroughPut Device w low lock speed
+- Smaller no of Cores                                | - 1000s of Cores
+- Have Optimization hardware like branch predictors  | - Dont Have this shit
+- Context Switching done by Software                 | - Context Switching done by Hardware
+- For mem instruction latencies with L1 and L2       | - Can Switch bw thread if one thread stalls
+  cache misses, thread are going to stall            | 
+- Work Item creation done in Software                | - Thread Schedulers and dispatch Units are implemented in Hardware                                            
+
+5) Heterogenous Computing: systems that use more than 1 kind of processor/cores. These systems gain perf/ energy eff not just by adding the same type of processors
+                           but by adding dissimilar co-processors, usually incorporating specialized processing capabilities to handle particular tasks
+
+6) CUDA (Compute Unified Device Architecture): is a parallel computing platform and API created by NVIDIA which enables us to massively parallel GPUs as General Purpose
+                                               Computing in GPU (GPGPU)
