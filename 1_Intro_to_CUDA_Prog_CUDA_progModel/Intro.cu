@@ -37,7 +37,6 @@ int main(){
         dim3 grid(nx/block.x,ny/block.y);
         hello_cuda<< <grid, block> >>();
     */
-
     // 32 Thread Blocks arranged into 8 thread blocks ion X dimension each having 4 threads
     dim3 block(4);
     dim3 grid(8);
@@ -45,5 +44,6 @@ int main(){
 
     // Gurantees Host Code to wait untill all previous launch kernels finish their execution
     cudaDeviceSynchronize(); // As kernel Launch is an asynchronous fn call, Host does not have to wait untill the Kernel Execution Finish
-    cudaDeviceReset;
+    cudaDeviceReset();
+    return 0;
 }

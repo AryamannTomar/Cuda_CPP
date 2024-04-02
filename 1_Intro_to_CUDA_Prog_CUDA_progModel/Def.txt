@@ -24,3 +24,5 @@ Within the same process multiple threads can co-exist and share the memory bw th
 
 6) CUDA (Compute Unified Device Architecture): is a parallel computing platform and API created by NVIDIA which enables us to massively parallel GPUs as General Purpose
                                                Computing in GPU (GPGPU)
+
+=> In a CUDA program it is very common to use threadIdx, blockIdx, blockDim, gridDim variable values to calculate array indices.
