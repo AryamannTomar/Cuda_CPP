@@ -49,6 +49,5 @@ int main(){
     unique_idx_calc_threadIdx << <grid,block> >>(d_data);
     cudaDeviceSynchronize(); 
     cudaDeviceReset();
-    
     return 0;
 }

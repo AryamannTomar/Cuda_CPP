@@ -1,0 +1,6 @@
+Basic Steps of a CUDA program
+How to Launch a Kernel?
+How to execute a simple kernel to sum up 2 arrays suing different Launch configurations
+Observe the Changes in Performance/ Execution Time when kernel is launched with different Launch configurations
+
+What parts of Device affect the Execution of certain type of Kernels?

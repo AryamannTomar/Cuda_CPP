@@ -27,5 +27,12 @@ Within the same process multiple threads can co-exist and share the memory bw th
 
 => In a CUDA program it is very common to use threadIdx, blockIdx, blockDim, gridDim variable values to calculate array indices.
 
-7) BlockDim: variable consist of no. of threads in each dimension of a thread block. Notice all the thread block in a grid have same block size, so this variable
+7) Grid: Collection of all the threads launch for a kernel
+
+8) Block: Threads in a Grid organized in groups called "Thread Blocks"
+
+9) BlockDim: variable consist of no. of threads in each dimension of a thread block. Notice all the thread block in a grid have same block size, so this variable
              value is same for all the threads in a grid.
+
+10) In CUDA we have access to unique set of variables from device call. These set of variables are implicitly initialized by CUDA runtime based on where the accessing thread is located in the grid and thread block.
+All these variables are dim3 variables. In a CUDA program it is very common to use threadIdx, blockIdx, blockDim, gridDim variable values to calculate array indices. 

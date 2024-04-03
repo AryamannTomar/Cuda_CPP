@@ -37,7 +37,7 @@ int main(){
         dim3 grid(nx/block.x,ny/block.y);
         hello_cuda<< <grid, block> >>();
     */
-    // 32 Thread Blocks arranged into 8 thread blocks ion X dimension each having 4 threads
+    // 1-Dimensional 32 Thread Blocks arranged into 8 thread blocks ion X dimension each having 4 threads
     dim3 block(4);
     dim3 grid(8);
     hello_cuda<<<grid,block>>>();
